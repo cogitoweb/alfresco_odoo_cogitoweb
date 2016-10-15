@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <record id="view_alfresco_odoo_mapper_configuration" model="ir.ui.view">
+            <field name="name">alfresco_odoo_mapper settings</field>
+            <field name="model">alfresco_odoo_mapper.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Alfresco Odoo Mapper"
+                      class="oe_form_configuration">
+                    <sheet>
+                        <div>
+                            <button string="Apply"
+                                    type="object"
+                                    name="execute"
+                                    class="oe_highlight" />
+                            or
+                            <button string="Cancel"
+                                    type="object"
+                                    name="cancel"
+                                    class="oe_link" />
+                        </div>
+
+                        <group string="Alfresco Odoo Mapper Settings">
+                            <field name="default_alfr_mapper_username" />
+                            <field name="default_alfr_mapper_password" />
+                            <field name="default_alfr_mapper_public_url" />
+                            <field name="default_alfr_mapper_private_url" />
+                            <field name="default_alfr_mapper_base_path" />
+                            <field name="default_alfr_mapper_account_path" />
+                            <field name="default_alfr_mapper_project_path" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_alfresco_odoo_mapper_configuration" model="ir.actions.act_window">
+            <field name="name">alfresco odoo mapper settings</field>
+            <field name="res_model">alfresco_odoo_mapper.config.settings</field>
+            <field name="view_id" ref="view_alfresco_odoo_mapper_configuration"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_alfresco_odoo_mapper_configuration" name="Alfresco Odoo Mapper" parent="base.menu_config"
+            sequence="15" action="action_alfresco_odoo_mapper_configuration"  />
+
+    </data>
+</openerp>
