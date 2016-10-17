@@ -68,7 +68,7 @@ def normalize_path(s):
     # no slash, then clean 
     
     _f = s.replace('/', '_')
-    _keep = ('_', '-', ' '); 
+    _keep = ('_', '-', ' ', '&', '.', '\''); 
     
     return "".join(c for c in _f if c.isalnum() or c in _keep).rstrip()
 
