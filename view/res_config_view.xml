@@ -26,6 +26,7 @@
                             <field name="default_alfr_mapper_public_url" />
                             <field name="default_alfr_mapper_private_url" />
                             <field name="default_alfr_mapper_base_path" />
+                            <field name="default_alfr_mapper_base_fs_path" />
                             <field name="default_alfr_mapper_account_path" />
                             <field name="default_alfr_mapper_project_path" />
                         </group>

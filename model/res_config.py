@@ -71,6 +71,14 @@ class hd_config_settings(models.TransientModel):
         translate=True,
     )
     
+    default_alfr_mapper_base_fs_path = fields.Char(
+        string='Afresco base filesystem path',
+        required=True,
+        help="base path for FS doc lib",
+        default_model='alfresco_odoo_mapper.config.settings',
+        translate=True,
+    )
+    
     default_alfr_mapper_account_path = fields.Char(
         string='Afresco customer path',
         required=True,

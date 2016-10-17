@@ -34,12 +34,12 @@ from ..lib import utils
 _logger = logging.getLogger(__name__)
 
 
-class alfresco_odoo_mapper_res_partner(models.Model):
-    _inherit = 'res.partner'
+class alfresco_odoo_mapper_project(models.Model):
+    _inherit = 'project.project'
     
     _alfr_result_obj = None
 
-    
+         
     @api.multi
     def popup_alfresco_fileexplorer(self):
         
@@ -49,6 +49,8 @@ class alfresco_odoo_mapper_res_partner(models.Model):
         
         fileurl += '/' + self._alfr_result_obj.default_alfr_mapper_base_fs_path
         fileurl += '/' + self._alfr_result_obj.default_alfr_mapper_account_path
+        fileurl += '/' + utils.normalize_path(self.partner_id.name)
+        fileurl += '/' + self._alfr_result_obj.default_alfr_mapper_project_path
         fileurl += '/' + utils.normalize_path(self.name)
         
         path = utils.map_to_path(fileurl)
@@ -68,7 +70,9 @@ class alfresco_odoo_mapper_res_partner(models.Model):
         
         self._alfr_result_obj = utils.retrieve_config_settings(self)
         
-        rel_url = 'path|/' + self._alfr_result_obj.default_alfr_mapper_account_path + '/' + utils.normalize_path(self.name)       
+        rel_url = 'path|/' + self._alfr_result_obj.default_alfr_mapper_account_path
+        rel_url += '/' + utils.normalize_path(self.partner_id.name)
+        rel_url += '/' + self._alfr_result_obj.default_alfr_mapper_project_path + '/' + utils.normalize_path(self.name)
         url = self._alfr_result_obj.default_alfr_mapper_private_url if utils.is_private_network(self) else self._alfr_result_obj.default_alfr_mapper_public_url
         
         url += '/' + self._alfr_result_obj.default_alfr_mapper_base_path
