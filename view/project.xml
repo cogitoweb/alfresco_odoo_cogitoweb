@@ -6,6 +6,7 @@
          <field name ="name">alfresco_odoo_mapper.project.project.form</field>
          <field name = "model">project.project</field>
          <field name = "inherit_id" ref="project.edit_project" />
+         <field name="groups_id" eval="[(4, [ref('alfresco_user') ])]" /> 
          <field name = "arch" type="xml">
             
              <xpath expr="/form/sheet/group/group[1]" position="inside">

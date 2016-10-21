@@ -14,6 +14,8 @@ or Firefox
 
     """,
 	'data': [
+            'security/security.xml',
+        
         	'view/project.xml',
         	'view/res_partner.xml',
         	'view/res_config_view.xml',

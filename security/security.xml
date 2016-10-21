@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="alfresco_user" model="res.groups">
+            <field name="name">Alfresco User</field>
+        </record>
+
+    </data>
+</openerp>
